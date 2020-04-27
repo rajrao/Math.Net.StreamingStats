@@ -1,11 +1,18 @@
 using System;
 using Math.Net.StreamingStats.Interfaces;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Math.Net.StreamingStats.Tests
 {
     public class StreamingStatsCollectorDecimalTests
     {
+        private readonly ITestOutputHelper _testOutputHelper;
+
+        public StreamingStatsCollectorDecimalTests(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
         [Fact]
         public void WithoutSamplesReturnsCountOfZeroAndNulls()
         {
@@ -52,7 +59,10 @@ namespace Math.Net.StreamingStats.Tests
             foreach (var val in new []{1,2,3,3,9,10})
             {
                 collector.Collect(val);
+                _testOutputHelper.WriteLine(collector.ToString());
             }
+
+           
             
             Assert.Equal(6ul, collector.Count);
             Assert.Equal(10, collector.Maximum);
@@ -75,6 +85,7 @@ namespace Math.Net.StreamingStats.Tests
             foreach (var val in new[] { -1, -2, -3, -3, -9, -10 })
             {
                 collector.Collect(val);
+                _testOutputHelper.WriteLine(collector.ToString());
             }
 
             Assert.Equal(6ul, collector.Count);

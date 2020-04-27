@@ -4,6 +4,12 @@ using System.Text;
 
 namespace Math.Net.StreamingStats.Interfaces
 {
+
+    /// <summary>
+    /// Provides statistics on a list of values without actually storing the list of values
+    /// The statistic information can be queried at any point in time during the capture of data and so
+    /// can be useful to display progressive stats about the list.
+    /// </summary>
     public interface IStreamingStatsCollectorDecimal
     {
         void Collect(decimal value);
@@ -28,6 +34,9 @@ namespace Math.Net.StreamingStats.Interfaces
         
         double? SampleStandardDeviation { get;  }
 
+        /// <summary>
+        /// Also called the Quadratic Mean
+        /// </summary>
         double? RootMeanSquare { get; }
 
     }
