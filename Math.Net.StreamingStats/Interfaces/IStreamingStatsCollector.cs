@@ -8,7 +8,7 @@ namespace Math.Net.StreamingStats.Interfaces
     {
         void Collect(decimal value);
 
-        long Count { get; }
+        ulong Count { get; }
 
         decimal? Minimum { get; }
 
@@ -20,10 +20,15 @@ namespace Math.Net.StreamingStats.Interfaces
 
         decimal? Mean { get; }
 
-        decimal? StandardDeviation { get; set; }
+        decimal? PopulationVariance { get; }
 
-        decimal? Variance { get; set; }
+        double? PopulationStandardDeviation { get; }
 
+        decimal? SampleVariance { get; }
+        
+        double? SampleStandardDeviation { get;  }
+
+        double? RootMeanSquare { get; }
 
     }
 }
