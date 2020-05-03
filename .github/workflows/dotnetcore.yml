@@ -68,7 +68,7 @@ jobs:
 
       - name: Push to NuGet
         run: dotnet nuget push '*.nupkg' -k ${{ secrets.INT_NUGET_API_KEY }} -s https://int.nugettest.org --skip-duplicate
-        #dotnet nuget push '*.nupkg' -k ${{ secrets.NUGET_API_KEY }} -s https://nugettest.org --skip-duplicate
+        #run: dotnet nuget push '*.nupkg' -k ${{ secrets.NUGET_API_KEY }} -s https://nugettest.org --skip-duplicate
 
       - name: Publish signed artifact
         uses: actions/upload-artifact@master
