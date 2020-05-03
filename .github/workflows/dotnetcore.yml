@@ -30,7 +30,7 @@ jobs:
       run: dotnet restore
     
     - name: Build
-      run: dotnet build --configuration Release --no-restore -p:Version=${{ $SEMVER }}
+      run: dotnet build --configuration Release --no-restore -p:Version=${{ SEMVER }}
     
     - name: Test
       run: dotnet test --no-restore --verbosity normal
