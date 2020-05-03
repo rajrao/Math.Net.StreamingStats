@@ -12,7 +12,7 @@ jobs:
     name: Build Package
     runs-on: ubuntu-latest
     env:
-      SEMVER:${{ "0.1.0"+$GITHUB_RUN_ID }}
+      SEMVER:${{ format('0.1.0-alpha+{0}', github.run_id ) }}
       
     steps:
     #- name: Dump GitHub context
