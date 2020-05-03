@@ -11,10 +11,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "wiki", "wiki", "{09F3FED4-A
 		wiki\streamingAvgTestData.png = wiki\streamingAvgTestData.png
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Math.Net.StreamingStats.Tests", "Math.Net.StreamingStats.Tests\Math.Net.StreamingStats.Tests.csproj", "{B228FD1D-CB5B-48F4-8067-27CC9F569269}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Math.Net.StreamingStats.Tests", "Math.Net.StreamingStats.Tests\Math.Net.StreamingStats.Tests.csproj", "{B228FD1D-CB5B-48F4-8067-27CC9F569269}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9E1D672-8116-46CA-AEE5-17B12A225B34}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnetcore.yml = .github\workflows\dotnetcore.yml
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
