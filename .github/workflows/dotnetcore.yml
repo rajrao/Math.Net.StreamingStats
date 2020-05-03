@@ -4,9 +4,18 @@ env:
   
 on:
   push:
-    branches: [ dev ]
+    branches:
+      - master
+      - dev
+      - gitHubActionsSetup
+    paths-ignore:
+      - '**.md'
   pull_request:
-    branches: [ master ]
+    branches: 
+      - master
+      - dev
+    paths-ignore:
+      - '**.md'
 
 jobs:
   build:        
