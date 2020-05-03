@@ -1,5 +1,7 @@
 name: "Build and Deploy"
-
+env:
+  SEMVER:${{ format('0.1.0-alpha+{0}', github.run_id ) }}
+  
 on:
   push:
     branches: [ dev ]
@@ -11,14 +13,13 @@ jobs:
     if: github.event_name == 'push' && contains(toJson(github.event.commits), '***NO_CI***') == false && contains(toJson(github.event.commits), '[ci skip]') == false && contains(toJson(github.event.commits), '[skip ci]') == false
     name: Build Package
     runs-on: ubuntu-latest
-    env:
-      SEMVER:${{ format('0.1.0-alpha+{0}', github.run_id ) }}
-      
+          
     steps:
     #- name: Dump GitHub context
     #  env: 
     #    GITHUB_CONTEXT: ${{ toJson(github) }}
     #  run: echo "$GITHUB_CONTEXT"
+    
       
     - uses: actions/checkout@v2
     - name: Setup .NET Core
