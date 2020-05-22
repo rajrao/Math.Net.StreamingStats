@@ -3,7 +3,7 @@ env:
   SEMVER: ${{ format('0.1.3-alpha+{0}', github.run_id ) }}
   NugetTestUrl: 'https://int.nugettest.org'
   NugetProdUrl: 'https://nuget.org'
-  NugetUrl: ${{ NugetProdUrl }}
+  NugetUrl: $NugetProdUrl
   NugetApiKey: ${{ secrets.NUGET_API_KEY }} # secrets.INT_NUGET_API_KEY/secrets.NUGET_API_KEY:  
   
 on:
